@@ -25,7 +25,7 @@ func main() {
 	log.Println(fmt.Sprintf("Listening on port %v", PORT))
 }
 
-func (h HomeHandler) ServeHTTP(w http.ResponseWriter, _ *http.Request) {
+func (h HomeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	_, err := w.Write([]byte("This is my home page"))
 	if err != nil {
 		log.Println("Error while writing to request: ", err)
